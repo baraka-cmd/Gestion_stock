@@ -2,13 +2,13 @@
         include 'entete.php';
 
         if(!empty($_GET['id'])){
-            $article = getVente($_GET['id']);
+            $article = getCommande($_GET['id']);
         }
     ?>
     <div class="home-content">
         <div class="overview-boxes">
             <div class="box">
-                <form action="<?= !empty($_GET['id']) ? '../Model/modifVente.php' : '../model/ajoutVente.php' ?>" method="POST">
+                <form action="<?= !empty($_GET['id']) ? '../Model/modifCommande.php' : '../model/ajoutCommande.php' ?>" method="POST">
 
                     <input value="<?= !empty($_GET['id']) ? $article['id'] : ""?>" type="hidden" name = "id" id = "id">
 
@@ -27,12 +27,12 @@
                     </select>
 
 
-                    <label for="id_client">Client</label>
-                    <select name="id_client" id="id_client">
+                    <label for="id_fournisseur">Fournisseur</label>
+                    <select name="id_fournisseur" id="id_fournisseur">
                     <?php
-                        $clients = getClient();
-                        if(!empty($clients) && is_array($clients)){
-                            foreach ($clients as $key => $value){
+                        $fournisseur = getFournisseur();
+                        if(!empty($fournisseur) && is_array($fournisseur)){
+                            foreach ($fournisseur as $key => $value){
                                 ?>
                                 <option value="<?= $value['id']?>"><?= $value['nom']."      ".$value['prenom']?></option>
                                 <?php
@@ -66,7 +66,7 @@
                 <table class="mtable">
                     <tr>
                         <th>Article</th>
-                        <th>Client</th>
+                        <th>Fournisseur</th>
                         <th>Quantite</th>
                         <th>Prix</th>
                         <th>Date</th>
@@ -75,7 +75,7 @@
                     </tr>
 
                     <?php
-                        $vente = getVente();
+                        $vente = getCommande();
                         if(!empty($vente) && is_array($vente)){
                             foreach ($vente as $key => $value){
                         ?> 
@@ -84,7 +84,7 @@
                             <td><?= $value['nom']. '  '.$value['prenom']?></td>
                             <td><?= $value['quantite']?></td>
                             <td><?= $value['prix']?></td>
-                            <td><?= date('d/m/Y H:i:s', strtotime($value['date_vente']))?></td>
+                            <td><?= date('d/m/Y H:i:s', strtotime($value['date_commande']))?></td>
                       
                             <td><a href="?id=<?= $value['id'] ?>">Edit</a></td>
                             <td>
