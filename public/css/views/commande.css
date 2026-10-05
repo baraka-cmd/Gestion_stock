@@ -1,0 +1,748 @@
+﻿body[data-page="commande"] {
+  --order-ink: #2e302b;
+  --order-muted: #777b70;
+  --order-line: #e5e5d9;
+  --order-paper: #ffffff;
+  --order-wash: #f8f8f1;
+  --order-olive: #69783b;
+  --order-olive-dark: #414c25;
+  --order-olive-soft: #eff2e4;
+  --order-blue: #386a79;
+  --order-blue-soft: #eaf2f4;
+  --order-red: #b44236;
+  --order-red-dark: #92352d;
+  --order-red-soft: #fff0ed;
+  --order-shadow: 0 18px 44px rgba(56, 61, 37, 0.08);
+  color: var(--order-ink);
+  background: #f6f7f0;
+}
+
+body[data-page="commande"] .home-section {
+  min-height: 100vh;
+  background: linear-gradient(145deg, #fafaf5 0%, #f0f2e8 100%);
+}
+
+body[data-page="commande"] .home-content {
+  width: 100%;
+  max-width: 1860px;
+  margin: 0 auto;
+  padding: 112px 34px 42px;
+}
+
+body[data-page="commande"] .overview-boxes {
+  display: grid;
+  grid-template-columns: minmax(300px, 370px) minmax(0, 1fr);
+  align-items: start;
+  gap: 22px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body[data-page="commande"] .overview-boxes > .box {
+  display: block;
+  min-width: 0;
+  width: auto;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid rgba(210, 215, 188, 0.85);
+  border-radius: 16px;
+  background: var(--order-paper);
+  box-shadow: var(--order-shadow);
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+body[data-page="commande"] .overview-boxes > .box:hover {
+  border-color: rgba(105, 120, 59, 0.3);
+  box-shadow: 0 22px 50px rgba(56, 61, 37, 0.12);
+}
+
+body[data-page="commande"] .overview-boxes > .box:first-child {
+  position: sticky;
+  top: 102px;
+}
+
+body[data-page="commande"] .overview-boxes > .box:last-child {
+  min-width: 0;
+}
+
+body[data-page="commande"] .overview-boxes > .box:first-child::before {
+  display: block;
+  padding: 20px 22px 0;
+  color: var(--order-olive);
+  content: "APPROVISIONNEMENT";
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+body[data-page="commande"] .overview-boxes > .box:first-child form {
+  width: 100%;
+  padding: 12px 22px 22px;
+}
+
+body[data-page="commande"] .overview-boxes > .box:last-child .table-scroll {
+  width: 100%;
+  max-height: calc(100vh - 148px);
+  overflow: auto;
+  overscroll-behavior: contain;
+  scrollbar-color: #b9c19c #f0f2e9;
+  scrollbar-width: thin;
+}
+
+body[data-page="commande"] .overview-boxes > .box:last-child .table-scroll::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+body[data-page="commande"] .overview-boxes > .box:last-child .table-scroll::-webkit-scrollbar-track {
+  border-radius: 20px;
+  background: #f0f2e9;
+}
+
+body[data-page="commande"] .overview-boxes > .box:last-child .table-scroll::-webkit-scrollbar-thumb {
+  border: 2px solid #f0f2e9;
+  border-radius: 20px;
+  background: #b9c19c;
+}
+
+body[data-page="commande"] .overview-boxes > .box:last-child .table-scroll::-webkit-scrollbar-thumb:hover {
+  background: #929e6a;
+}
+
+body[data-page="commande"] .overview-boxes > .box:last-child .table-scroll > .mtable {
+  width: 100%;
+  min-width: 1120px;
+  border: 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  color: var(--order-ink);
+}
+
+body[data-page="commande"] .mtable tr:first-child {
+  position: sticky;
+  z-index: 2;
+  top: 0;
+  background: #f6f7ef;
+}
+
+body[data-page="commande"] .mtable tr:first-child th {
+  position: sticky;
+  top: 0;
+  padding: 15px 12px;
+  border-bottom: 1px solid var(--order-line);
+  background: #f6f7ef;
+  color: #727866;
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  line-height: 1.4;
+  text-align: left;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+body[data-page="commande"] .mtable tr:first-child th:first-child {
+  padding-left: 20px;
+}
+
+body[data-page="commande"] .mtable tr:first-child th:nth-child(3),
+body[data-page="commande"] .mtable tr:first-child th:nth-child(4),
+body[data-page="commande"] .mtable tr:first-child th:nth-child(6),
+body[data-page="commande"] .mtable tr:first-child th:nth-child(7),
+body[data-page="commande"] .mtable tr:first-child th:last-child {
+  text-align: center;
+}
+
+body[data-page="commande"] .mtable tr:not(:first-child) {
+  background: var(--order-paper);
+  transition: background-color 150ms ease;
+}
+
+body[data-page="commande"] .mtable tr:not(:first-child):nth-child(even) {
+  background: #fdfdf9;
+}
+
+body[data-page="commande"] .mtable tr:not(:first-child):hover {
+  background: #f4f6eb;
+}
+
+body[data-page="commande"] .mtable tr:not(:first-child) td {
+  padding: 14px 12px;
+  border-bottom: 1px solid #eeefe6;
+  color: #505449;
+  font-size: 0.81rem;
+  line-height: 1.5;
+  vertical-align: middle;
+}
+
+body[data-page="commande"] .mtable tr:not(:first-child):last-child td {
+  border-bottom: 0;
+}
+
+body[data-page="commande"] .mtable tr:not(:first-child) td:first-child {
+  max-width: 190px;
+  padding-left: 20px;
+  color: #343b28;
+  font-weight: 750;
+}
+
+body[data-page="commande"] .mtable tr:not(:first-child) td:nth-child(2) {
+  min-width: 155px;
+  color: #5e6841;
+  font-weight: 650;
+}
+
+body[data-page="commande"] .mtable tr:not(:first-child) td:nth-child(3) {
+  color: #374a4e;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  text-align: center;
+}
+
+body[data-page="commande"] .mtable tr:not(:first-child) td:nth-child(4) {
+  color: #303c37;
+  font-variant-numeric: tabular-nums;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+body[data-page="commande"] .mtable tr:not(:first-child) td:nth-child(5) {
+  min-width: 145px;
+  color: var(--order-muted);
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+body[data-page="commande"] .mtable tr:not(:first-child) td:nth-child(6) {
+  color: #4e6251;
+  font-size: 0.76rem;
+  font-weight: 750;
+  text-align: center;
+  white-space: nowrap;
+}
+
+body[data-page="commande"] .mtable tr:not(:first-child) td:nth-child(7),
+body[data-page="commande"] .mtable tr:not(:first-child) td:last-child {
+  min-width: 84px;
+  text-align: center;
+}
+
+body[data-page="commande"] .mtable tr:not(:first-child) td:last-child {
+  padding-right: 16px;
+}
+
+body[data-page="commande"] .overview-boxes > .box:first-child form > label {
+  display: block;
+  margin: 16px 0 6px;
+  color: #555f3c;
+  font-size: 0.78rem;
+  font-weight: 750;
+  line-height: 1.4;
+}
+
+body[data-page="commande"] .overview-boxes > .box:first-child form > label:first-of-type {
+  margin-top: 8px;
+}
+
+body[data-page="commande"] .overview-boxes > .box:first-child form > input[type="hidden"] {
+  display: none;
+}
+
+body[data-page="commande"] .overview-boxes > .box:first-child form > input,
+body[data-page="commande"] .overview-boxes > .box:first-child form > select {
+  display: block;
+  width: 100%;
+  min-height: 47px;
+  margin: 0;
+  padding: 11px 13px;
+  border: 1px solid #dfe2d3;
+  border-radius: 9px;
+  outline: none;
+  background-color: #fdfef9;
+  color: #343b2a;
+  font-size: 0.86rem;
+  line-height: 1.4;
+  transition: border-color 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+}
+
+body[data-page="commande"] .overview-boxes > .box:first-child form > input::placeholder {
+  color: #9a9d8d;
+  opacity: 1;
+}
+
+body[data-page="commande"] .overview-boxes > .box:first-child form > input:hover,
+body[data-page="commande"] .overview-boxes > .box:first-child form > select:hover {
+  border-color: #b9c49a;
+  background-color: #ffffff;
+}
+
+body[data-page="commande"] .overview-boxes > .box:first-child form > input:focus,
+body[data-page="commande"] .overview-boxes > .box:first-child form > select:focus {
+  border-color: var(--order-olive);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(105, 120, 59, 0.13);
+}
+
+body[data-page="commande"] .overview-boxes > .box:first-child form > input:focus-visible,
+body[data-page="commande"] .overview-boxes > .box:first-child form > select:focus-visible {
+  outline: 2px solid rgba(105, 120, 59, 0.35);
+  outline-offset: 2px;
+}
+
+body[data-page="commande"] #id_article,
+body[data-page="commande"] #id_fournisseur {
+  appearance: none;
+  padding-right: 38px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23707854' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 13px center;
+}
+
+body[data-page="commande"] #id_article {
+  min-height: 54px;
+  color: #354729;
+  font-weight: 650;
+}
+
+body[data-page="commande"] #id_fournisseur {
+  color: #40534a;
+  font-weight: 600;
+}
+
+body[data-page="commande"] #id_article option,
+body[data-page="commande"] #id_fournisseur option {
+  padding: 8px;
+  background: #ffffff;
+  color: #343b2a;
+}
+
+body[data-page="commande"] #quantite,
+body[data-page="commande"] #prix {
+  font-variant-numeric: tabular-nums;
+}
+
+body[data-page="commande"] #quantite {
+  accent-color: var(--order-olive);
+}
+
+body[data-page="commande"] #prix {
+  border-color: #d6dfc0;
+  background: #f7f9ef;
+  color: #48582c;
+  font-weight: 750;
+}
+
+body[data-page="commande"] #prix:focus {
+  border-color: var(--order-olive);
+  background: #ffffff;
+}
+
+body[data-page="commande"] .overview-boxes > .box:first-child form > button[type="submit"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  width: 100%;
+  min-height: 49px;
+  margin: 20px 0 0;
+  padding: 12px 16px;
+  border: 1px solid #69783b;
+  border-radius: 9px;
+  background: linear-gradient(135deg, #69783b, #56652e);
+  box-shadow: 0 9px 18px rgba(105, 120, 59, 0.2);
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 750;
+  line-height: 1.35;
+  text-align: center;
+  transition: box-shadow 160ms ease, filter 160ms ease, transform 160ms ease;
+}
+
+body[data-page="commande"] .overview-boxes > .box:first-child form > button[type="submit"] i {
+  font-size: 0.92rem;
+}
+
+body[data-page="commande"] .overview-boxes > .box:first-child form > button[type="submit"]:hover {
+  box-shadow: 0 13px 24px rgba(105, 120, 59, 0.27);
+  filter: saturate(1.08);
+  transform: translateY(-2px);
+}
+
+body[data-page="commande"] .overview-boxes > .box:first-child form > button[type="submit"]:active {
+  box-shadow: 0 5px 10px rgba(105, 120, 59, 0.2);
+  transform: translateY(0);
+}
+
+body[data-page="commande"] .overview-boxes > .box:first-child form > button[type="submit"]:focus-visible {
+  outline: 3px solid rgba(105, 120, 59, 0.3);
+  outline-offset: 3px;
+}
+
+body[data-page="commande"] .overview-boxes > .box:first-child form > .alert {
+  margin: 15px 0 0;
+  padding: 12px 14px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  font-size: 0.81rem;
+  line-height: 1.5;
+}
+
+body[data-page="commande"] .overview-boxes > .box:first-child form > .alert.success {
+  border-color: #d7e4b9;
+  background: #f1f6e7;
+  color: #56692b;
+}
+
+body[data-page="commande"] .overview-boxes > .box:first-child form > .alert.danger {
+  border-color: #efcbc5;
+  background: var(--order-red-soft);
+  color: var(--order-red-dark);
+}
+
+body[data-page="commande"] .overview-boxes > .box:first-child form > .alert.warning {
+  border-color: #f0dbb5;
+  background: #fff6e8;
+  color: #94631c;
+}
+
+body[data-page="commande"] .icon-action {
+  display: inline-grid;
+  place-items: center;
+  width: 35px;
+  height: 35px;
+  margin: 2px;
+  border: 1px solid #d4dfbb;
+  border-radius: 9px;
+  background: var(--order-olive-soft);
+  color: #5b6c32;
+  font-size: 0.84rem;
+  text-decoration: none;
+  vertical-align: middle;
+  transition: color 150ms ease, border-color 150ms ease, background-color 150ms ease, transform 150ms ease;
+}
+
+body[data-page="commande"] .icon-action:hover {
+  transform: translateY(-2px);
+  border-color: #69783b;
+  background: #69783b;
+  color: #ffffff;
+}
+
+body[data-page="commande"] .icon-action:focus-visible {
+  outline: 3px solid rgba(105, 120, 59, 0.24);
+  outline-offset: 2px;
+}
+
+body[data-page="commande"] .icon-action.action-danger {
+  border-color: #f0cbc5;
+  background: var(--order-red-soft);
+  color: var(--order-red);
+}
+
+body[data-page="commande"] .icon-action.action-danger:hover {
+  border-color: var(--order-red);
+  background: var(--order-red);
+  color: #ffffff;
+}
+
+body[data-page="commande"] .inline-action {
+  display: inline-flex;
+  width: auto;
+  margin: 0;
+  vertical-align: middle;
+}
+
+body[data-page="commande"] .inline-action button.icon-action {
+  width: 35px;
+  min-width: 35px;
+  height: 35px;
+  margin: 2px;
+  padding: 0;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+body[data-page="commande"] .mtable td a:not(.icon-action) {
+  color: var(--order-blue);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+body[data-page="commande"] .mtable td a:not(.icon-action):hover {
+  color: var(--order-olive-dark);
+}
+
+body[data-page="commande"] input:disabled,
+body[data-page="commande"] select:disabled,
+body[data-page="commande"] button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+body[data-page="commande"] input[aria-invalid="true"],
+body[data-page="commande"] select[aria-invalid="true"] {
+  border-color: #c64d43;
+  background-color: #fffafa;
+  box-shadow: 0 0 0 3px rgba(198, 77, 67, 0.1);
+}
+
+body[data-page="commande"] .mtable tr:focus-within {
+  outline: 2px solid rgba(105, 120, 59, 0.25);
+  outline-offset: -2px;
+}
+
+body[data-page="commande"] .mtable td,
+body[data-page="commande"] .mtable th {
+  overflow-wrap: anywhere;
+}
+
+body[data-page="commande"] ::selection {
+  background: #e0e8bf;
+  color: #2e302b;
+}
+
+@media (min-width: 1550px) {
+  body[data-page="commande"] .home-content {
+    padding-right: 46px;
+    padding-left: 46px;
+  }
+
+  body[data-page="commande"] .overview-boxes {
+    grid-template-columns: minmax(330px, 400px) minmax(0, 1fr);
+    gap: 26px;
+  }
+
+  body[data-page="commande"] .mtable tr:not(:first-child) td {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+}
+
+@media (max-width: 1240px) {
+  body[data-page="commande"] .home-content {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+
+  body[data-page="commande"] .overview-boxes {
+    grid-template-columns: minmax(275px, 330px) minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  body[data-page="commande"] .overview-boxes > .box:first-child form {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  body[data-page="commande"] .overview-boxes > .box:first-child::before {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+}
+
+@media (max-width: 920px) {
+  body[data-page="commande"] .home-content {
+    padding-top: 104px;
+  }
+
+  body[data-page="commande"] .overview-boxes {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  body[data-page="commande"] .overview-boxes > .box:first-child {
+    position: static;
+  }
+
+  body[data-page="commande"] .overview-boxes > .box:last-child .table-scroll {
+    max-height: none;
+  }
+
+  body[data-page="commande"] .overview-boxes > .box:first-child form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      "article-label article-label"
+      "article-field article-field"
+      "supplier-label supplier-label"
+      "supplier-field supplier-field"
+      "quantity-label price-label"
+      "quantity-field price-field"
+      "submit submit"
+      "alert alert";
+    column-gap: 16px;
+    align-items: end;
+  }
+
+  body[data-page="commande"] .overview-boxes > .box:first-child form > label:nth-of-type(1) {
+    grid-area: article-label;
+  }
+
+  body[data-page="commande"] .overview-boxes > .box:first-child form > #id_article {
+    grid-area: article-field;
+  }
+
+  body[data-page="commande"] .overview-boxes > .box:first-child form > label:nth-of-type(2) {
+    grid-area: supplier-label;
+  }
+
+  body[data-page="commande"] .overview-boxes > .box:first-child form > #id_fournisseur {
+    grid-area: supplier-field;
+  }
+
+  body[data-page="commande"] .overview-boxes > .box:first-child form > label:nth-of-type(3) {
+    grid-area: quantity-label;
+  }
+
+  body[data-page="commande"] .overview-boxes > .box:first-child form > #quantite {
+    grid-area: quantity-field;
+  }
+
+  body[data-page="commande"] .overview-boxes > .box:first-child form > label:nth-of-type(4) {
+    grid-area: price-label;
+  }
+
+  body[data-page="commande"] .overview-boxes > .box:first-child form > #prix {
+    grid-area: price-field;
+  }
+
+  body[data-page="commande"] .overview-boxes > .box:first-child form > button[type="submit"] {
+    grid-area: submit;
+  }
+
+  body[data-page="commande"] .overview-boxes > .box:first-child form > .alert {
+    grid-area: alert;
+  }
+
+  body[data-page="commande"] .overview-boxes > .box:first-child form > button[type="submit"],
+  body[data-page="commande"] .overview-boxes > .box:first-child form > .alert {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 600px) {
+  body[data-page="commande"] .home-content {
+    padding: 98px 13px 24px;
+  }
+
+  body[data-page="commande"] .overview-boxes {
+    gap: 14px;
+  }
+
+  body[data-page="commande"] .overview-boxes > .box {
+    border-radius: 12px;
+  }
+
+  body[data-page="commande"] .overview-boxes > .box:first-child::before {
+    padding: 17px 16px 0;
+  }
+
+  body[data-page="commande"] .overview-boxes > .box:first-child form {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "article-label"
+      "article-field"
+      "supplier-label"
+      "supplier-field"
+      "quantity-label"
+      "quantity-field"
+      "price-label"
+      "price-field"
+      "submit"
+      "alert";
+    padding: 8px 16px 17px;
+  }
+
+  body[data-page="commande"] .overview-boxes > .box:last-child .table-scroll > .mtable {
+    min-width: 1080px;
+  }
+
+  body[data-page="commande"] .mtable tr:first-child th {
+    padding: 13px 10px;
+  }
+
+  body[data-page="commande"] .mtable tr:not(:first-child) td {
+    padding: 12px 10px;
+  }
+
+  body[data-page="commande"] .mtable tr:first-child th:first-child,
+  body[data-page="commande"] .mtable tr:not(:first-child) td:first-child {
+    padding-left: 15px;
+  }
+
+  body[data-page="commande"] .mtable tr:first-child th:last-child,
+  body[data-page="commande"] .mtable tr:not(:first-child) td:last-child {
+    padding-right: 15px;
+  }
+}
+
+@media (max-width: 380px) {
+  body[data-page="commande"] .home-content {
+    padding-right: 9px;
+    padding-left: 9px;
+  }
+
+  body[data-page="commande"] .overview-boxes > .box:first-child form {
+    padding-right: 13px;
+    padding-left: 13px;
+  }
+
+  body[data-page="commande"] .overview-boxes > .box:first-child::before {
+    padding-right: 13px;
+    padding-left: 13px;
+  }
+
+  body[data-page="commande"] .overview-boxes > .box:last-child .table-scroll > .mtable {
+    min-width: 1020px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body[data-page="commande"] *,
+  body[data-page="commande"] *::before,
+  body[data-page="commande"] *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media print {
+  body[data-page="commande"] {
+    background: #ffffff;
+  }
+
+  body[data-page="commande"] .home-content {
+    max-width: none;
+    padding: 0;
+  }
+
+  body[data-page="commande"] .overview-boxes {
+    display: block;
+  }
+
+  body[data-page="commande"] .overview-boxes > .box {
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  body[data-page="commande"] .overview-boxes > .box:first-child,
+  body[data-page="commande"] .mtable td:nth-child(7),
+  body[data-page="commande"] .mtable td:last-child {
+    display: none !important;
+  }
+
+  body[data-page="commande"] .overview-boxes > .box:last-child .table-scroll {
+    max-height: none;
+    overflow: visible;
+  }
+
+  body[data-page="commande"] .overview-boxes > .box:last-child .table-scroll > .mtable {
+    min-width: 0;
+  }
+}

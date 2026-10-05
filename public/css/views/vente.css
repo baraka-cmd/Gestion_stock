@@ -1,0 +1,436 @@
+﻿body[data-page="vente"] {
+  --vente-ink: #1e293b;
+  --vente-muted: #64748b;
+  --vente-line: #e2e8f0;
+  --vente-paper: #ffffff;
+  --vente-wash: #f8fafc;
+  --vente-primary: #3b82f6;
+  --vente-primary-dark: #1d4ed8;
+  --vente-primary-soft: #eff6ff;
+  --vente-accent: #10b981;
+  --vente-accent-soft: #ecfdf5;
+  --vente-danger: #ef4444;
+  --vente-danger-soft: #fef2f2;
+  --vente-warning: #f59e0b;
+  --vente-warning-soft: #fffbeb;
+  --vente-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+  color: var(--vente-ink);
+  background: #f1f5f9;
+}
+
+body[data-page="vente"] .home-section {
+  min-height: 100vh;
+  background: linear-gradient(145deg, #f8fafc 0%, #f1f5f9 100%);
+}
+
+body[data-page="vente"] .home-content {
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 112px 34px 42px;
+}
+
+body[data-page="vente"] .overview-boxes {
+  display: grid;
+  grid-template-columns: minmax(300px, 380px) minmax(0, 1fr);
+  align-items: start;
+  gap: 24px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body[data-page="vente"] .overview-boxes > .box {
+  display: block !important;
+  min-width: 0;
+  width: auto !important;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-radius: 20px;
+  background: var(--vente-paper);
+  box-shadow: var(--vente-shadow);
+  transition: border-color 200ms ease, box-shadow 200ms ease, transform 200ms ease;
+}
+
+body[data-page="vente"] .overview-boxes > .box:hover {
+  border-color: rgba(59, 130, 246, 0.3);
+  box-shadow: 0 25px 60px rgba(15, 23, 42, 0.12);
+}
+
+body[data-page="vente"] .overview-boxes > .box:first-child {
+  position: sticky;
+  top: 102px;
+}
+
+body[data-page="vente"] .overview-boxes > .box:first-child::before {
+  display: block;
+  padding: 24px 24px 0;
+  color: var(--vente-primary);
+  content: "ENREGISTREMENT VENTE";
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+}
+
+body[data-page="vente"] .overview-boxes > .box:first-child form {
+  width: 100%;
+  padding: 16px 24px 28px;
+}
+
+body[data-page="vente"] .overview-boxes > .box:last-child .table-scroll {
+  width: 100%;
+  max-height: calc(100vh - 160px);
+  overflow: auto;
+  overscroll-behavior: contain;
+  scrollbar-color: #cbd5e1 #f1f5f9;
+  scrollbar-width: thin;
+}
+
+body[data-page="vente"] .overview-boxes > .box:last-child .table-scroll::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+body[data-page="vente"] .overview-boxes > .box:last-child .table-scroll::-webkit-scrollbar-track {
+  border-radius: 20px;
+  background: #f1f5f9;
+}
+
+body[data-page="vente"] .overview-boxes > .box:last-child .table-scroll::-webkit-scrollbar-thumb {
+  border: 2px solid #f1f5f9;
+  border-radius: 20px;
+  background: #cbd5e1;
+}
+
+body[data-page="vente"] .overview-boxes > .box:last-child .table-scroll::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+body[data-page="vente"] .mtable {
+  width: 100%;
+  min-width: 1000px;
+  border: 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  color: var(--vente-ink);
+}
+
+body[data-page="vente"] .mtable tr:first-child {
+  position: sticky;
+  z-index: 2;
+  top: 0;
+  background: #f8fafc;
+}
+
+body[data-page="vente"] .mtable tr:first-child th {
+  position: sticky;
+  top: 0;
+  padding: 18px 16px;
+  border-bottom: 1px solid var(--vente-line);
+  background: #f8fafc;
+  color: #475569;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+  text-align: left;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+body[data-page="vente"] .mtable tr:first-child th:first-child {
+  padding-left: 28px;
+}
+
+body[data-page="vente"] .mtable tr:not(:first-child) {
+  background: var(--vente-paper);
+  transition: background-color 150ms ease;
+}
+
+body[data-page="vente"] .mtable tr:not(:first-child):nth-child(even) {
+  background: #fafcff;
+}
+
+body[data-page="vente"] .mtable tr:not(:first-child):hover {
+  background: #f0f7ff;
+}
+
+body[data-page="vente"] .mtable tr:not(:first-child) td {
+  padding: 18px 16px;
+  border-bottom: 1px solid #f1f5f9;
+  color: #334155;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  vertical-align: middle;
+}
+
+body[data-page="vente"] .mtable tr:not(:first-child) td:first-child {
+  padding-left: 28px;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+body[data-page="vente"] .mtable tr:not(:first-child) td:nth-child(3),
+body[data-page="vente"] .mtable tr:not(:first-child) td:nth-child(4) {
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
+
+body[data-page="vente"] .mtable tr:not(:first-child) td:nth-child(4) {
+  color: var(--vente-primary-dark);
+}
+
+body[data-page="vente"] .mtable tr:not(:first-child) td:nth-child(5) {
+  color: var(--vente-muted);
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+body[data-page="vente"] .mtable tr:not(:first-child) td:last-child {
+  padding-right: 28px;
+  text-align: right;
+  white-space: nowrap;
+}
+
+body[data-page="vente"] .overview-boxes > .box:first-child form > label {
+  display: block;
+  margin: 18px 0 8px;
+  color: #334155;
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+body[data-page="vente"] .overview-boxes > .box:first-child form > label:first-of-type {
+  margin-top: 0;
+}
+
+body[data-page="vente"] .overview-boxes > .box:first-child form > input:not([type="hidden"]),
+body[data-page="vente"] .overview-boxes > .box:first-child form > select {
+  display: block;
+  width: 100%;
+  min-height: 50px;
+  margin: 0;
+  padding: 12px 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  outline: none;
+  background-color: #f8fafc;
+  color: #1e293b;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  transition: border-color 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+
+body[data-page="vente"] .overview-boxes > .box:first-child form > input::placeholder {
+  color: #94a3b8;
+  opacity: 1;
+}
+
+body[data-page="vente"] .overview-boxes > .box:first-child form > input:hover,
+body[data-page="vente"] .overview-boxes > .box:first-child form > select:hover {
+  border-color: #94a3b8;
+  background-color: #ffffff;
+}
+
+body[data-page="vente"] .overview-boxes > .box:first-child form > input:focus,
+body[data-page="vente"] .overview-boxes > .box:first-child form > select:focus {
+  border-color: var(--vente-primary);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+}
+
+body[data-page="vente"] #id_article,
+body[data-page="vente"] #id_client {
+  appearance: none;
+  padding-right: 44px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+}
+
+body[data-page="vente"] #prix {
+  background-color: #f1f5f9;
+  color: var(--vente-primary-dark);
+  font-weight: 800;
+  cursor: not-allowed;
+}
+
+body[data-page="vente"] .overview-boxes > .box:first-child form > button[type="submit"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 52px;
+  margin: 28px 0 0;
+  padding: 14px 20px;
+  border: 0;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.2);
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 700;
+  transition: box-shadow 200ms ease, transform 200ms ease, filter 200ms ease;
+}
+
+body[data-page="vente"] .overview-boxes > .box:first-child form > button[type="submit"]:hover {
+  box-shadow: 0 15px 30px rgba(59, 130, 246, 0.3);
+  filter: brightness(1.05);
+  transform: translateY(-2px);
+}
+
+body[data-page="vente"] .overview-boxes > .box:first-child form > button[type="submit"]:active {
+  transform: translateY(0);
+}
+
+body[data-page="vente"] .overview-boxes > .box:first-child form > .alert {
+  margin: 20px 0 0;
+  padding: 14px 18px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+body[data-page="vente"] .alert.success {
+  border-color: #6ee7b7;
+  background: #ecfdf5;
+  color: #065f46;
+}
+
+body[data-page="vente"] .alert.danger {
+  border-color: #fca5a5;
+  background: #fef2f2;
+  color: #991b1b;
+}
+
+body[data-page="vente"] .icon-action {
+  display: inline-grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  margin: 0 3px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #64748b;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 180ms ease;
+}
+
+body[data-page="vente"] .icon-action:hover {
+  transform: translateY(-2px);
+  border-color: var(--vente-primary);
+  background: var(--vente-primary-soft);
+  color: var(--vente-primary);
+}
+
+body[data-page="vente"] .icon-action.action-danger:hover {
+  border-color: var(--vente-danger);
+  background: var(--vente-danger-soft);
+  color: var(--vente-danger);
+}
+
+body[data-page="vente"] .inline-action {
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+body[data-page="vente"] .inline-action button {
+  padding: 0;
+  cursor: pointer;
+}
+
+body[data-page="vente"] ::selection {
+  background: #bfdbfe;
+  color: #1e3a8a;
+}
+
+@media (min-width: 1500px) {
+  body[data-page="vente"] .overview-boxes {
+    grid-template-columns: minmax(340px, 420px) minmax(0, 1fr);
+    gap: 32px;
+  }
+}
+
+@media (max-width: 1100px) {
+  body[data-page="vente"] .overview-boxes {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  
+  body[data-page="vente"] .overview-boxes > .box:first-child {
+    position: static;
+  }
+
+  body[data-page="vente"] .overview-boxes > .box:first-child form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+      "art-lbl art-lbl"
+      "art-fld art-fld"
+      "cli-lbl cli-lbl"
+      "cli-fld cli-fld"
+      "qty-lbl prx-lbl"
+      "qty-fld prx-fld"
+      "btn btn"
+      "alt alt";
+    gap: 0 20px;
+  }
+
+  body[data-page="vente"] .overview-boxes > .box:first-child form label[for="id_article"] { grid-area: art-lbl; }
+  body[data-page="vente"] #id_article { grid-area: art-fld; }
+  body[data-page="vente"] .overview-boxes > .box:first-child form label[for="id_client"] { grid-area: cli-lbl; }
+  body[data-page="vente"] #id_client { grid-area: cli-fld; }
+  body[data-page="vente"] .overview-boxes > .box:first-child form label[for="quantite"] { grid-area: qty-lbl; }
+  body[data-page="vente"] #quantite { grid-area: qty-fld; }
+  body[data-page="vente"] .overview-boxes > .box:first-child form label[for="prix"] { grid-area: prx-lbl; }
+  body[data-page="vente"] #prix { grid-area: prx-fld; }
+  body[data-page="vente"] .overview-boxes > .box:first-child form button { grid-area: btn; }
+  body[data-page="vente"] .overview-boxes > .box:first-child form .alert { grid-area: alt; }
+}
+
+@media (max-width: 640px) {
+  body[data-page="vente"] .home-content {
+    padding: 98px 14px 24px;
+  }
+
+  body[data-page="vente"] .overview-boxes > .box:first-child form {
+    grid-template-columns: 1fr;
+    grid-template-areas: none;
+    display: block;
+  }
+
+  body[data-page="vente"] .mtable {
+    min-width: 800px;
+  }
+}
+
+@media print {
+  body[data-page="vente"] .sidebar,
+  body[data-page="vente"] nav,
+  body[data-page="vente"] .box:first-child,
+  body[data-page="vente"] .icon-action,
+  body[data-page="vente"] .inline-action {
+    display: none !important;
+  }
+  
+  body[data-page="vente"] .home-section {
+    width: 100%;
+    left: 0;
+  }
+
+  body[data-page="vente"] .overview-boxes {
+    display: block;
+  }
+
+  body[data-page="vente"] .box:last-child {
+    border: 0;
+    box-shadow: none;
+  }
+}

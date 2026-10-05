@@ -1,0 +1,511 @@
+﻿body[data-page="recuCommande"] {
+  --receipt-ink: #26362f;
+  --receipt-muted: #718078;
+  --receipt-line: #dce6df;
+  --receipt-paper: #ffffff;
+  --receipt-wash: #f1f6f2;
+  --receipt-green: #24664d;
+  --receipt-green-dark: #194b3b;
+  --receipt-green-soft: #e8f3eb;
+  --receipt-gold: #a26f25;
+  --receipt-gold-soft: #fff5e2;
+  color: var(--receipt-ink);
+  background: #edf3ef;
+}
+
+body[data-page="recuCommande"] .home-section {
+  min-height: 100vh;
+  background: linear-gradient(145deg, #f5f8f5 0%, #eaf1ec 100%);
+}
+
+body[data-page="recuCommande"] .home-content {
+  display: block;
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 112px 30px 48px;
+}
+
+body[data-page="recuCommande"] .home-content > .page {
+  position: relative;
+  width: min(100%, 970px);
+  min-height: 0;
+  margin: 0 auto;
+  padding: 50px 54px 44px;
+  overflow: hidden;
+  border: 1px solid #dce5de;
+  border-top: 5px solid var(--receipt-green);
+  border-radius: 12px;
+  background: var(--receipt-paper);
+  box-shadow: 0 22px 55px rgba(28, 59, 44, 0.1);
+  color: var(--receipt-ink);
+}
+
+body[data-page="recuCommande"] .home-content > .page::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(135deg, rgba(36, 102, 77, 0.08), transparent 68%);
+  content: "";
+  pointer-events: none;
+}
+
+body[data-page="recuCommande"] .page > .button.hidden-print {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 0 28px;
+}
+
+body[data-page="recuCommande"] #btnPrint {
+  display: inline-flex;
+  min-width: 132px;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 9px 15px;
+  border: 1px solid #24664d;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #24664d, #1c5845);
+  box-shadow: 0 7px 16px rgba(36, 102, 77, 0.18);
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 750;
+  transition: box-shadow 150ms ease, transform 150ms ease, filter 150ms ease;
+}
+
+body[data-page="recuCommande"] #btnPrint:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 11px 21px rgba(36, 102, 77, 0.24);
+  filter: saturate(1.08);
+}
+
+body[data-page="recuCommande"] #btnPrint:active {
+  transform: translateY(0);
+}
+
+body[data-page="recuCommande"] #btnPrint:focus-visible {
+  outline: 3px solid rgba(36, 102, 77, 0.27);
+  outline-offset: 3px;
+}
+
+body[data-page="recuCommande"] .page > .cote-a-cote:not([style]) {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(235px, 0.85fr);
+  align-items: start;
+  gap: 32px;
+  width: 100%;
+  margin: 0 0 31px;
+  padding: 0 0 25px;
+  border-bottom: 1px solid var(--receipt-line);
+}
+
+body[data-page="recuCommande"] .page > .cote-a-cote:not([style]) > div:first-child {
+  min-width: 0;
+}
+
+body[data-page="recuCommande"] .page > .cote-a-cote:not([style]) > div:first-child img {
+  display: block;
+  width: auto;
+  max-width: 190px !important;
+  height: 76px;
+  max-height: 76px !important;
+  margin: 0 0 15px;
+  padding: 6px;
+  border: 1px solid #e6ece7;
+  border-radius: 8px;
+  background: #ffffff;
+  object-fit: contain !important;
+}
+
+body[data-page="recuCommande"] .page > .cote-a-cote:not([style]) h2 {
+  max-width: 440px;
+  margin: 0 0 9px;
+  color: #214735;
+  font-size: 1.48rem;
+  font-weight: 800;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+body[data-page="recuCommande"] .page > .cote-a-cote:not([style]) > div:first-child p {
+  margin: 4px 0;
+  color: #718078;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+body[data-page="recuCommande"] .page > .cote-a-cote:not([style]) > div:last-child {
+  display: grid;
+  gap: 0;
+  min-width: 0;
+  padding: 17px 18px;
+  border: 1px solid #e1e9e2;
+  border-radius: 10px;
+  background: #f7faf7;
+}
+
+body[data-page="recuCommande"] .page > .cote-a-cote:not([style]) > div:last-child p {
+  margin: 0;
+  padding: 9px 0;
+  border-bottom: 1px solid #e7eee8;
+  color: #607168;
+  font-size: 0.76rem;
+  line-height: 1.45;
+}
+
+body[data-page="recuCommande"] .page > .cote-a-cote:not([style]) > div:last-child p:first-child {
+  color: #264c39;
+  font-size: 0.92rem;
+  font-weight: 800;
+}
+
+body[data-page="recuCommande"] .page > .cote-a-cote:not([style]) > div:last-child p:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+body[data-page="recuCommande"] .page > .cote-a-cote[style*="width: 50%"] {
+  display: grid;
+  grid-template-columns: minmax(125px, 0.35fr) minmax(0, 1fr);
+  gap: 18px;
+  width: 100% !important;
+  margin: 0;
+  padding: 13px 0;
+  border-bottom: 1px solid #edf1ed;
+}
+
+body[data-page="recuCommande"] .page > .cote-a-cote[style*="width: 50%"] p {
+  margin: 0;
+  color: #718078;
+  font-size: 0.78rem;
+  line-height: 1.55;
+}
+
+body[data-page="recuCommande"] .page > .cote-a-cote[style*="width: 50%"] p:first-child {
+  color: #425b4c;
+  font-weight: 750;
+}
+
+body[data-page="recuCommande"] .page > .cote-a-cote[style*="width: 50%"] p:last-child {
+  color: #2d4136;
+  font-weight: 650;
+  overflow-wrap: anywhere;
+}
+
+body[data-page="recuCommande"] .page > table.mtable {
+  width: 100%;
+  margin: 29px 0 22px;
+  border: 1px solid #dce6df;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 9px;
+  overflow: hidden;
+}
+
+body[data-page="recuCommande"] .page > table.mtable tr:first-child th {
+  padding: 14px 15px;
+  border: 0;
+  border-bottom: 1px solid #dce6df;
+  background: #eff5f0;
+  color: #5d7567;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.075em;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+body[data-page="recuCommande"] .page > table.mtable tr:first-child th:nth-child(2) {
+  width: 125px;
+  text-align: center;
+}
+
+body[data-page="recuCommande"] .page > table.mtable tr:first-child th:last-child {
+  width: 190px;
+  text-align: right;
+}
+
+body[data-page="recuCommande"] .page > table.mtable tr:not(:first-child) {
+  background: #ffffff;
+}
+
+body[data-page="recuCommande"] .page > table.mtable tr:not(:first-child) td {
+  padding: 17px 15px;
+  border: 0;
+  border-bottom: 1px solid #edf1ed;
+  color: #384a40;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  vertical-align: middle;
+}
+
+body[data-page="recuCommande"] .page > table.mtable tr:not(:first-child) td:first-child {
+  color: #284a37;
+  font-weight: 750;
+}
+
+body[data-page="recuCommande"] .page > table.mtable tr:not(:first-child) td:nth-child(2) {
+  color: #4e6256;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  text-align: center;
+}
+
+body[data-page="recuCommande"] .page > table.mtable tr:not(:first-child) td:last-child {
+  color: #24513c;
+  font-variant-numeric: tabular-nums;
+  font-weight: 800;
+  text-align: right;
+  white-space: nowrap;
+}
+
+body[data-page="recuCommande"] .page > table.mtable tr:last-child td {
+  border-bottom: 0;
+}
+
+body[data-page="recuCommande"] .page > table.mtable tr:not(:first-child):hover {
+  background: #f9fbf9;
+}
+
+body[data-page="recuCommande"] .page > table.mtable + p {
+  margin: 24px 0 0;
+  padding: 18px 0 0;
+  border-top: 1px solid var(--receipt-line);
+  color: #77867d;
+  font-size: 0.74rem;
+  line-height: 1.65;
+  text-align: center;
+}
+
+body[data-page="recuCommande"] .page > p:only-child {
+  margin: 0;
+  padding: 34px 22px;
+  border: 1px dashed #d6e3da;
+  border-radius: 9px;
+  background: #f7faf7;
+  color: #687c70;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+body[data-page="recuCommande"] .page strong {
+  color: #244b37;
+  font-weight: 780;
+}
+
+body[data-page="recuCommande"] .page a {
+  color: var(--receipt-green);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+body[data-page="recuCommande"] .page a:hover {
+  color: var(--receipt-green-dark);
+}
+
+body[data-page="recuCommande"] .page :focus-visible {
+  outline: 2px solid rgba(36, 102, 77, 0.32);
+  outline-offset: 3px;
+}
+
+body[data-page="recuCommande"] ::selection {
+  background: #cde5d2;
+  color: #26362f;
+}
+
+@media (min-width: 1500px) {
+  body[data-page="recuCommande"] .home-content > .page {
+    padding: 58px 64px 52px;
+  }
+
+  body[data-page="recuCommande"] .page > .cote-a-cote:not([style]) {
+    gap: 42px;
+    padding-bottom: 30px;
+  }
+}
+
+@media (max-width: 900px) {
+  body[data-page="recuCommande"] .home-content {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  body[data-page="recuCommande"] .home-content > .page {
+    padding: 38px 36px 34px;
+  }
+
+  body[data-page="recuCommande"] .page > .cote-a-cote:not([style]) {
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 0.8fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  body[data-page="recuCommande"] .home-content {
+    padding: 98px 12px 24px;
+  }
+
+  body[data-page="recuCommande"] .home-content > .page {
+    padding: 25px 20px 23px;
+    border-radius: 10px;
+  }
+
+  body[data-page="recuCommande"] .page > .button.hidden-print {
+    margin-bottom: 20px;
+  }
+
+  body[data-page="recuCommande"] #btnPrint {
+    width: 100%;
+  }
+
+  body[data-page="recuCommande"] .page > .cote-a-cote:not([style]) {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+    margin-bottom: 20px;
+    padding-bottom: 19px;
+  }
+
+  body[data-page="recuCommande"] .page > .cote-a-cote:not([style]) h2 {
+    font-size: 1.27rem;
+  }
+
+  body[data-page="recuCommande"] .page > .cote-a-cote[style*="width: 50%"] {
+    grid-template-columns: minmax(100px, 0.38fr) minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  body[data-page="recuCommande"] .page > table.mtable {
+    margin-top: 21px;
+  }
+
+  body[data-page="recuCommande"] .page > table.mtable tr:first-child th {
+    padding: 11px 9px;
+    font-size: 0.61rem;
+  }
+
+  body[data-page="recuCommande"] .page > table.mtable tr:not(:first-child) td {
+    padding: 13px 9px;
+    font-size: 0.74rem;
+  }
+
+  body[data-page="recuCommande"] .page > table.mtable tr:first-child th:nth-child(2) {
+    width: 82px;
+  }
+
+  body[data-page="recuCommande"] .page > table.mtable tr:first-child th:last-child {
+    width: 132px;
+  }
+}
+
+@media (max-width: 390px) {
+  body[data-page="recuCommande"] .home-content {
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+
+  body[data-page="recuCommande"] .home-content > .page {
+    padding: 20px 14px;
+  }
+
+  body[data-page="recuCommande"] .page > .cote-a-cote[style*="width: 50%"] {
+    grid-template-columns: minmax(84px, 0.4fr) minmax(0, 1fr);
+    gap: 8px;
+  }
+
+  body[data-page="recuCommande"] .page > table.mtable tr:first-child th,
+  body[data-page="recuCommande"] .page > table.mtable tr:not(:first-child) td {
+    padding-right: 7px;
+    padding-left: 7px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body[data-page="recuCommande"] *,
+  body[data-page="recuCommande"] *::before,
+  body[data-page="recuCommande"] *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@page {
+  size: A4 portrait;
+  margin: 14mm;
+}
+
+@media print {
+  body[data-page="recuCommande"] {
+    background: #ffffff;
+    color: #202a23;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  body[data-page="recuCommande"] .sidebar,
+  body[data-page="recuCommande"] .home-section > nav,
+  body[data-page="recuCommande"] .hidden-print,
+  body[data-page="recuCommande"] .hidden-print * {
+    display: none !important;
+  }
+
+  body[data-page="recuCommande"] .home-section {
+    width: 100%;
+    min-height: 0;
+    left: 0;
+    background: #ffffff;
+  }
+
+  body[data-page="recuCommande"] .home-content {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  body[data-page="recuCommande"] .home-content > .page {
+    width: 100%;
+    min-height: 0;
+    margin: 0;
+    padding: 8mm 5mm;
+    overflow: visible;
+    border: 0;
+    border-top: 3px solid var(--receipt-green);
+    border-radius: 0;
+    box-shadow: none;
+    page-break-after: avoid;
+    break-after: avoid-page;
+  }
+
+  body[data-page="recuCommande"] .page > .cote-a-cote:not([style]) {
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 10mm;
+    margin-bottom: 8mm;
+    padding-bottom: 7mm;
+  }
+
+  body[data-page="recuCommande"] .page > .cote-a-cote[style*="width: 50%"] {
+    width: 100% !important;
+    break-inside: avoid;
+  }
+
+  body[data-page="recuCommande"] .page > table.mtable {
+    margin-top: 8mm;
+    break-inside: avoid;
+  }
+
+  body[data-page="recuCommande"] .page > table.mtable tr {
+    break-inside: avoid;
+  }
+
+  body[data-page="recuCommande"] .page a {
+    color: inherit;
+    text-decoration: none;
+  }
+}

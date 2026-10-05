@@ -1,0 +1,649 @@
+﻿body[data-page="client"] {
+  --client-ink: #1e303b;
+  --client-muted: #6a7d87;
+  --client-line: #dce7eb;
+  --client-paper: #ffffff;
+  --client-wash: #f3f8fa;
+  --client-teal: #147c78;
+  --client-teal-dark: #15534e;
+  --client-teal-soft: #e5f4f1;
+  --client-blue: #356e95;
+  --client-blue-soft: #eaf3f8;
+  --client-red: #b7443c;
+  --client-red-soft: #fff0ee;
+  --client-shadow: 0 18px 44px rgba(29, 61, 72, 0.08);
+  color: var(--client-ink);
+  background: #f2f7f8;
+}
+
+body[data-page="client"] .home-section {
+  min-height: 100vh;
+  background: linear-gradient(145deg, #f5f9fa 0%, #edf4f5 100%);
+}
+
+body[data-page="client"] .home-content {
+  width: 100%;
+  max-width: 1760px;
+  margin: 0 auto;
+  padding: 112px 34px 42px;
+}
+
+body[data-page="client"] .overview-boxes {
+  display: grid;
+  grid-template-columns: minmax(280px, 350px) minmax(0, 1fr);
+  align-items: start;
+  gap: 22px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body[data-page="client"] .overview-boxes > .box {
+  display: block;
+  min-width: 0;
+  width: auto;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid rgba(190, 211, 216, 0.82);
+  border-radius: 16px;
+  background: var(--client-paper);
+  box-shadow: var(--client-shadow);
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+body[data-page="client"] .overview-boxes > .box:hover {
+  border-color: rgba(20, 124, 120, 0.27);
+  box-shadow: 0 22px 50px rgba(29, 61, 72, 0.11);
+}
+
+body[data-page="client"] .overview-boxes > .box:first-child {
+  position: sticky;
+  top: 102px;
+}
+
+body[data-page="client"] .overview-boxes > .box:last-child {
+  min-width: 0;
+}
+
+body[data-page="client"] .overview-boxes > .box:first-child::before {
+  display: block;
+  padding: 20px 22px 0;
+  color: var(--client-teal);
+  content: "FICHES CLIENTS";
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+body[data-page="client"] .overview-boxes > .box:first-child form {
+  width: 100%;
+  padding: 12px 22px 22px;
+}
+
+body[data-page="client"] .overview-boxes > .box:last-child .table-scroll {
+  width: 100%;
+  max-height: calc(100vh - 148px);
+  overflow: auto;
+  overscroll-behavior: contain;
+  scrollbar-color: #a9c3c8 #eef4f5;
+  scrollbar-width: thin;
+}
+
+body[data-page="client"] .overview-boxes > .box:last-child .table-scroll::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+body[data-page="client"] .overview-boxes > .box:last-child .table-scroll::-webkit-scrollbar-track {
+  border-radius: 20px;
+  background: #eef4f5;
+}
+
+body[data-page="client"] .overview-boxes > .box:last-child .table-scroll::-webkit-scrollbar-thumb {
+  border: 2px solid #eef4f5;
+  border-radius: 20px;
+  background: #a9c3c8;
+}
+
+body[data-page="client"] .overview-boxes > .box:last-child .table-scroll::-webkit-scrollbar-thumb:hover {
+  background: #789ba2;
+}
+
+body[data-page="client"] .overview-boxes > .box:last-child .table-scroll > .mtable {
+  width: 100%;
+  min-width: 740px;
+  border: 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  color: var(--client-ink);
+}
+
+body[data-page="client"] .mtable tr:first-child {
+  position: sticky;
+  z-index: 2;
+  top: 0;
+  background: #f3f8f9;
+}
+
+body[data-page="client"] .mtable tr:first-child th {
+  position: sticky;
+  top: 0;
+  padding: 16px 14px;
+  border-bottom: 1px solid var(--client-line);
+  background: #f3f8f9;
+  color: #627781;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.075em;
+  line-height: 1.4;
+  text-align: left;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+body[data-page="client"] .mtable tr:first-child th:first-child {
+  padding-left: 22px;
+}
+
+body[data-page="client"] .mtable tr:first-child th:last-child {
+  padding-right: 20px;
+  text-align: center;
+}
+
+body[data-page="client"] .mtable tr:not(:first-child) {
+  background: var(--client-paper);
+  transition: background-color 150ms ease;
+}
+
+body[data-page="client"] .mtable tr:not(:first-child):nth-child(even) {
+  background: #fbfdfd;
+}
+
+body[data-page="client"] .mtable tr:not(:first-child):hover {
+  background: #eef7f7;
+}
+
+body[data-page="client"] .mtable tr:not(:first-child) td {
+  padding: 16px 14px;
+  border-bottom: 1px solid #e8eff1;
+  color: #435b64;
+  font-size: 0.85rem;
+  line-height: 1.55;
+  vertical-align: middle;
+}
+
+body[data-page="client"] .mtable tr:not(:first-child):last-child td {
+  border-bottom: 0;
+}
+
+body[data-page="client"] .mtable tr:not(:first-child) td:first-child {
+  max-width: 190px;
+  padding-left: 22px;
+  color: #223b45;
+  font-weight: 750;
+}
+
+body[data-page="client"] .mtable tr:not(:first-child) td:nth-child(2) {
+  color: #345963;
+  font-weight: 650;
+}
+
+body[data-page="client"] .mtable tr:not(:first-child) td:nth-child(3) {
+  color: var(--client-blue);
+  font-variant-numeric: tabular-nums;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+body[data-page="client"] .mtable tr:not(:first-child) td:nth-child(4) {
+  min-width: 180px;
+  color: var(--client-muted);
+  overflow-wrap: anywhere;
+}
+
+body[data-page="client"] .mtable tr:not(:first-child) td:last-child {
+  width: 74px;
+  padding-right: 20px;
+  text-align: center;
+}
+
+body[data-page="client"] .overview-boxes > .box:first-child form > label {
+  display: block;
+  margin: 16px 0 6px;
+  color: #36545d;
+  font-size: 0.78rem;
+  font-weight: 750;
+  line-height: 1.4;
+}
+
+body[data-page="client"] .overview-boxes > .box:first-child form > label:first-of-type {
+  margin-top: 8px;
+}
+
+body[data-page="client"] .overview-boxes > .box:first-child form > input {
+  display: block;
+  width: 100%;
+  min-height: 46px;
+  margin: 0;
+  padding: 11px 13px;
+  border: 1px solid #d7e4e7;
+  border-radius: 9px;
+  outline: none;
+  background-color: #fbfdfd;
+  color: #203b45;
+  font-size: 0.87rem;
+  line-height: 1.4;
+  transition: border-color 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+}
+
+body[data-page="client"] .overview-boxes > .box:first-child form > input[type="hidden"] {
+  display: none;
+}
+
+body[data-page="client"] .overview-boxes > .box:first-child form > input::placeholder {
+  color: #9aabb0;
+  opacity: 1;
+}
+
+body[data-page="client"] .overview-boxes > .box:first-child form > input:hover {
+  border-color: #a9c5cb;
+  background-color: #ffffff;
+}
+
+body[data-page="client"] .overview-boxes > .box:first-child form > input:focus {
+  border-color: var(--client-teal);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(20, 124, 120, 0.12);
+}
+
+body[data-page="client"] .overview-boxes > .box:first-child form > input:focus-visible {
+  outline: 2px solid rgba(20, 124, 120, 0.35);
+  outline-offset: 2px;
+}
+
+body[data-page="client"] #nom,
+body[data-page="client"] #prenom {
+  font-weight: 650;
+}
+
+body[data-page="client"] #telephone {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.015em;
+}
+
+body[data-page="client"] #adresse {
+  min-height: 46px;
+}
+
+body[data-page="client"] .overview-boxes > .box:first-child form > button[type="submit"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  width: 100%;
+  min-height: 48px;
+  margin: 20px 0 0;
+  padding: 12px 18px;
+  border: 1px solid #147c78;
+  border-radius: 9px;
+  background: linear-gradient(135deg, #147c78, #176c61);
+  box-shadow: 0 9px 18px rgba(20, 124, 120, 0.19);
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 0.86rem;
+  font-weight: 750;
+  line-height: 1.3;
+  text-align: center;
+  transition: box-shadow 160ms ease, filter 160ms ease, transform 160ms ease;
+}
+
+body[data-page="client"] .overview-boxes > .box:first-child form > button[type="submit"] i {
+  font-size: 0.9rem;
+}
+
+body[data-page="client"] .overview-boxes > .box:first-child form > button[type="submit"]:hover {
+  box-shadow: 0 13px 24px rgba(20, 124, 120, 0.25);
+  filter: saturate(1.08);
+  transform: translateY(-2px);
+}
+
+body[data-page="client"] .overview-boxes > .box:first-child form > button[type="submit"]:active {
+  box-shadow: 0 5px 10px rgba(20, 124, 120, 0.2);
+  transform: translateY(0);
+}
+
+body[data-page="client"] .overview-boxes > .box:first-child form > button[type="submit"]:focus-visible {
+  outline: 3px solid rgba(20, 124, 120, 0.3);
+  outline-offset: 3px;
+}
+
+body[data-page="client"] .overview-boxes > .box:first-child form > .alert {
+  margin: 15px 0 0;
+  padding: 12px 14px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  font-size: 0.81rem;
+  line-height: 1.5;
+}
+
+body[data-page="client"] .overview-boxes > .box:first-child form > .alert.success {
+  border-color: #b8e2cc;
+  background: #eaf7ef;
+  color: #226342;
+}
+
+body[data-page="client"] .overview-boxes > .box:first-child form > .alert.danger {
+  border-color: #edcbc7;
+  background: var(--client-red-soft);
+  color: var(--client-red);
+}
+
+body[data-page="client"] .overview-boxes > .box:first-child form > .alert.warning {
+  border-color: #efd8b5;
+  background: #fff5e7;
+  color: #996219;
+}
+
+body[data-page="client"] .icon-action {
+  display: inline-grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid #c8e3df;
+  border-radius: 9px;
+  background: var(--client-teal-soft);
+  color: #14745d;
+  font-size: 0.87rem;
+  text-decoration: none;
+  transition: color 150ms ease, border-color 150ms ease, background-color 150ms ease, transform 150ms ease;
+}
+
+body[data-page="client"] .icon-action:hover {
+  transform: translateY(-2px);
+  border-color: #14745d;
+  background: #14745d;
+  color: #ffffff;
+}
+
+body[data-page="client"] .icon-action:focus-visible {
+  outline: 3px solid rgba(20, 124, 120, 0.24);
+  outline-offset: 2px;
+}
+
+body[data-page="client"] .mtable td a:not(.icon-action) {
+  color: var(--client-blue);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+body[data-page="client"] .mtable td a:not(.icon-action):hover {
+  color: var(--client-teal);
+}
+
+body[data-page="client"] input:disabled,
+body[data-page="client"] button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+body[data-page="client"] input[aria-invalid="true"] {
+  border-color: #c64d43;
+  background-color: #fffafa;
+  box-shadow: 0 0 0 3px rgba(198, 77, 67, 0.1);
+}
+
+body[data-page="client"] .mtable tr:focus-within {
+  outline: 2px solid rgba(20, 124, 120, 0.25);
+  outline-offset: -2px;
+}
+
+body[data-page="client"] .mtable td,
+body[data-page="client"] .mtable th {
+  overflow-wrap: anywhere;
+}
+
+body[data-page="client"] ::selection {
+  background: #cbe9e6;
+  color: #1e303b;
+}
+
+@media (min-width: 1500px) {
+  body[data-page="client"] .home-content {
+    padding-right: 46px;
+    padding-left: 46px;
+  }
+
+  body[data-page="client"] .overview-boxes {
+    grid-template-columns: minmax(310px, 380px) minmax(0, 1fr);
+    gap: 26px;
+  }
+
+  body[data-page="client"] .mtable tr:not(:first-child) td {
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+}
+
+@media (max-width: 1200px) {
+  body[data-page="client"] .home-content {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+
+  body[data-page="client"] .overview-boxes {
+    grid-template-columns: minmax(260px, 320px) minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  body[data-page="client"] .overview-boxes > .box:first-child form {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  body[data-page="client"] .overview-boxes > .box:first-child::before {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+}
+
+@media (max-width: 900px) {
+  body[data-page="client"] .home-content {
+    padding-top: 104px;
+  }
+
+  body[data-page="client"] .overview-boxes {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  body[data-page="client"] .overview-boxes > .box:first-child {
+    position: static;
+  }
+
+  body[data-page="client"] .overview-boxes > .box:last-child .table-scroll {
+    max-height: none;
+  }
+
+  body[data-page="client"] .overview-boxes > .box:first-child form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      "name-label first-name-label"
+      "name-field first-name-field"
+      "phone-label address-label"
+      "phone-field address-field"
+      "submit submit"
+      "alert alert";
+    column-gap: 16px;
+    align-items: end;
+  }
+
+  body[data-page="client"] .overview-boxes > .box:first-child form > label:nth-of-type(1) {
+    grid-area: name-label;
+  }
+
+  body[data-page="client"] .overview-boxes > .box:first-child form > #nom {
+    grid-area: name-field;
+  }
+
+  body[data-page="client"] .overview-boxes > .box:first-child form > label:nth-of-type(2) {
+    grid-area: first-name-label;
+  }
+
+  body[data-page="client"] .overview-boxes > .box:first-child form > #prenom {
+    grid-area: first-name-field;
+  }
+
+  body[data-page="client"] .overview-boxes > .box:first-child form > label:nth-of-type(3) {
+    grid-area: phone-label;
+  }
+
+  body[data-page="client"] .overview-boxes > .box:first-child form > #telephone {
+    grid-area: phone-field;
+  }
+
+  body[data-page="client"] .overview-boxes > .box:first-child form > label:nth-of-type(4) {
+    grid-area: address-label;
+  }
+
+  body[data-page="client"] .overview-boxes > .box:first-child form > #adresse {
+    grid-area: address-field;
+  }
+
+  body[data-page="client"] .overview-boxes > .box:first-child form > input[type="hidden"] {
+    display: none;
+  }
+
+  body[data-page="client"] .overview-boxes > .box:first-child form > button[type="submit"],
+  body[data-page="client"] .overview-boxes > .box:first-child form > .alert {
+    grid-area: submit;
+  }
+
+  body[data-page="client"] .overview-boxes > .box:first-child form > .alert {
+    grid-area: alert;
+  }
+}
+
+@media (max-width: 600px) {
+  body[data-page="client"] .home-content {
+    padding: 98px 13px 24px;
+  }
+
+  body[data-page="client"] .overview-boxes {
+    gap: 14px;
+  }
+
+  body[data-page="client"] .overview-boxes > .box {
+    border-radius: 12px;
+  }
+
+  body[data-page="client"] .overview-boxes > .box:first-child::before {
+    padding: 17px 16px 0;
+  }
+
+  body[data-page="client"] .overview-boxes > .box:first-child form {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "name-label"
+      "name-field"
+      "first-name-label"
+      "first-name-field"
+      "phone-label"
+      "phone-field"
+      "address-label"
+      "address-field"
+      "submit"
+      "alert";
+    padding: 8px 16px 17px;
+  }
+
+  body[data-page="client"] .overview-boxes > .box:last-child .table-scroll > .mtable {
+    min-width: 700px;
+  }
+
+  body[data-page="client"] .mtable tr:first-child th {
+    padding: 13px 11px;
+  }
+
+  body[data-page="client"] .mtable tr:not(:first-child) td {
+    padding: 13px 11px;
+  }
+
+  body[data-page="client"] .mtable tr:first-child th:first-child,
+  body[data-page="client"] .mtable tr:not(:first-child) td:first-child {
+    padding-left: 15px;
+  }
+
+  body[data-page="client"] .mtable tr:first-child th:last-child,
+  body[data-page="client"] .mtable tr:not(:first-child) td:last-child {
+    padding-right: 15px;
+  }
+}
+
+@media (max-width: 380px) {
+  body[data-page="client"] .home-content {
+    padding-right: 9px;
+    padding-left: 9px;
+  }
+
+  body[data-page="client"] .overview-boxes > .box:first-child form {
+    padding-right: 13px;
+    padding-left: 13px;
+  }
+
+  body[data-page="client"] .overview-boxes > .box:first-child::before {
+    padding-right: 13px;
+    padding-left: 13px;
+  }
+
+  body[data-page="client"] .overview-boxes > .box:last-child .table-scroll > .mtable {
+    min-width: 660px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body[data-page="client"] *,
+  body[data-page="client"] *::before,
+  body[data-page="client"] *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media print {
+  body[data-page="client"] {
+    background: #ffffff;
+  }
+
+  body[data-page="client"] .home-content {
+    max-width: none;
+    padding: 0;
+  }
+
+  body[data-page="client"] .overview-boxes {
+    display: block;
+  }
+
+  body[data-page="client"] .overview-boxes > .box {
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  body[data-page="client"] .overview-boxes > .box:first-child,
+  body[data-page="client"] .icon-action {
+    display: none !important;
+  }
+
+  body[data-page="client"] .overview-boxes > .box:last-child .table-scroll {
+    max-height: none;
+    overflow: visible;
+  }
+
+  body[data-page="client"] .overview-boxes > .box:last-child .table-scroll > .mtable {
+    min-width: 0;
+  }
+}

@@ -1,0 +1,12 @@
+﻿body[data-page="recuVente"] .receipt-page {
+  padding: 2rem 1rem;
+}
+
+body[data-page="recuVente"] .receipt-card {
+  background: var(--white);
+  max-width: 880px;
+  margin: 0 auto;
+  border-radius: 20px;
+  box-shadow: var(--shadow-soft);
+  padding: 2rem;
+}
